@@ -1,3 +1,9 @@
+# revision 13293
+# category Package
+# catalog-ctan /dviware/dvipsconfig
+# catalog-date 2007-03-05 22:02:45 +0100
+# catalog-license gpl
+# catalog-version 1.6
 Name:		texlive-dvipsconfig
 Version:	1.6
 Release:	1
@@ -72,6 +78,7 @@ useful for measuring and eliminating paper feed errors!.
 %{_texmfdistdir}/dvips/dvipsconfig/config.tray3
 %{_texmfdistdir}/dvips/dvipsconfig/config.usledger
 %{_texmfdistdir}/dvips/dvipsconfig/config.usletter
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -82,3 +89,5 @@ useful for measuring and eliminating paper feed errors!.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}

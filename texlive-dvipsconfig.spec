@@ -16,7 +16,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 This is a collection of dvips PostScript header and dvips
@@ -28,20 +27,12 @@ manual feeder, envelope feeder, and tray 1, 2 and 3, and
 printing a PostScript grid underneath the page material--very
 useful for measuring and eliminating paper feed errors!.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -79,7 +70,6 @@ useful for measuring and eliminating paper feed errors!.
 %{_texmfdistdir}/dvips/dvipsconfig/config.tray3
 %{_texmfdistdir}/dvips/dvipsconfig/config.usledger
 %{_texmfdistdir}/dvips/dvipsconfig/config.usletter
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -90,5 +80,3 @@ useful for measuring and eliminating paper feed errors!.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}

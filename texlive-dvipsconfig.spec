@@ -80,3 +80,17 @@ useful for measuring and eliminating paper feed errors!.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.6-2
++ Revision: 751244
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.6-1
++ Revision: 718287
+- texlive-dvipsconfig
+- texlive-dvipsconfig
+- texlive-dvipsconfig
+- texlive-dvipsconfig
+

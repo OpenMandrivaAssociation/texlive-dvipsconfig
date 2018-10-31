@@ -6,7 +6,7 @@
 # catalog-version 1.6
 Name:		texlive-dvipsconfig
 Version:	1.6
-Release:	10
+Release:	11
 Summary:	Collection of dvips PostScript headers
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/dviware/dvipsconfig

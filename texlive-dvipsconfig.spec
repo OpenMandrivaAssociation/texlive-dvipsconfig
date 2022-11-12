@@ -1,17 +1,11 @@
-# revision 13293
-# category Package
-# catalog-ctan /dviware/dvipsconfig
-# catalog-date 2007-03-05 22:02:45 +0100
-# catalog-license gpl
-# catalog-version 1.6
 Name:		texlive-dvipsconfig
-Version:	1.6
-Release:	11
+Version:	13293
+Release:	1
 Summary:	Collection of dvips PostScript headers
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/dviware/dvipsconfig
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dvipsconfig.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dvipsconfig.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -28,12 +22,12 @@ printing a PostScript grid underneath the page material--very
 useful for measuring and eliminating paper feed errors!.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -73,24 +67,10 @@ useful for measuring and eliminating paper feed errors!.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0
+%autosetup -p1 -c
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.6-2
-+ Revision: 751244
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.6-1
-+ Revision: 718287
-- texlive-dvipsconfig
-- texlive-dvipsconfig
-- texlive-dvipsconfig
-- texlive-dvipsconfig
-

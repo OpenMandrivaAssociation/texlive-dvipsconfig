@@ -1,6 +1,6 @@
 Name:		texlive-dvipsconfig
 Version:	13293
-Release:	1
+Release:	2
 Summary:	Collection of dvips PostScript headers
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/dviware/dvipsconfig

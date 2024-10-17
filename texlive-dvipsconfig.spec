@@ -3,7 +3,7 @@ Version:	13293
 Release:	2
 Summary:	Collection of dvips PostScript headers
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/dviware/dvipsconfig
+URL:		https://www.ctan.org/tex-archive/dviware/dvipsconfig
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dvipsconfig.r%{version}.tar.xz
 BuildArch:	noarch
